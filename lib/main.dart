@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_future/data/postal_code.dart';
+import 'package:riverpod_future/provider.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
@@ -27,6 +29,8 @@ class MyHomePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final postalCode = ref.watch(apiProvider).asData?.value;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
@@ -35,10 +39,24 @@ class MyHomePage extends ConsumerWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            TextField(),
+            TextField(
+              onChanged: ((value) => onPostalCodeChanged(ref, value)),
+            ),
+            Text(postalCode?.data[0].en.address1 ?? 'No postal Code'),
           ],
         ),
       ),
     );
+  }
+
+  void onPostalCodeChanged(WidgetRef ref, String value) {
+    print(value);
+    if (value.length != 7) {
+      return;
+    }
+    try {
+      int.parse(value);
+      ref.watch(postalCodeProvider.state).state = value;
+    } catch (ex) {}
   }
 }
