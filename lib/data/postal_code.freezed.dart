@@ -184,7 +184,7 @@ PostalCodeData _$PostalCodeDataFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$PostalCodeData {
-  String get code => throw _privateConstructorUsedError;
+  String get prefcode => throw _privateConstructorUsedError;
   PostalCodeAddress get ja => throw _privateConstructorUsedError;
   PostalCodeAddress get en => throw _privateConstructorUsedError;
 
@@ -199,7 +199,7 @@ abstract class $PostalCodeDataCopyWith<$Res> {
   factory $PostalCodeDataCopyWith(
           PostalCodeData value, $Res Function(PostalCodeData) then) =
       _$PostalCodeDataCopyWithImpl<$Res>;
-  $Res call({String code, PostalCodeAddress ja, PostalCodeAddress en});
+  $Res call({String prefcode, PostalCodeAddress ja, PostalCodeAddress en});
 
   $PostalCodeAddressCopyWith<$Res> get ja;
   $PostalCodeAddressCopyWith<$Res> get en;
@@ -216,14 +216,14 @@ class _$PostalCodeDataCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? code = freezed,
+    Object? prefcode = freezed,
     Object? ja = freezed,
     Object? en = freezed,
   }) {
     return _then(_value.copyWith(
-      code: code == freezed
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
+      prefcode: prefcode == freezed
+          ? _value.prefcode
+          : prefcode // ignore: cast_nullable_to_non_nullable
               as String,
       ja: ja == freezed
           ? _value.ja
@@ -258,7 +258,7 @@ abstract class _$PostalCodeDataCopyWith<$Res>
           _PostalCodeData value, $Res Function(_PostalCodeData) then) =
       __$PostalCodeDataCopyWithImpl<$Res>;
   @override
-  $Res call({String code, PostalCodeAddress ja, PostalCodeAddress en});
+  $Res call({String prefcode, PostalCodeAddress ja, PostalCodeAddress en});
 
   @override
   $PostalCodeAddressCopyWith<$Res> get ja;
@@ -279,14 +279,14 @@ class __$PostalCodeDataCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? code = freezed,
+    Object? prefcode = freezed,
     Object? ja = freezed,
     Object? en = freezed,
   }) {
     return _then(_PostalCodeData(
-      code: code == freezed
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
+      prefcode: prefcode == freezed
+          ? _value.prefcode
+          : prefcode // ignore: cast_nullable_to_non_nullable
               as String,
       ja: ja == freezed
           ? _value.ja
@@ -306,13 +306,13 @@ class _$_PostalCodeData
     with DiagnosticableTreeMixin
     implements _PostalCodeData {
   const _$_PostalCodeData(
-      {required this.code, required this.ja, required this.en});
+      {required this.prefcode, required this.ja, required this.en});
 
   factory _$_PostalCodeData.fromJson(Map<String, dynamic> json) =>
       _$$_PostalCodeDataFromJson(json);
 
   @override
-  final String code;
+  final String prefcode;
   @override
   final PostalCodeAddress ja;
   @override
@@ -320,7 +320,7 @@ class _$_PostalCodeData
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'PostalCodeData(code: $code, ja: $ja, en: $en)';
+    return 'PostalCodeData(prefcode: $prefcode, ja: $ja, en: $en)';
   }
 
   @override
@@ -328,7 +328,7 @@ class _$_PostalCodeData
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'PostalCodeData'))
-      ..add(DiagnosticsProperty('code', code))
+      ..add(DiagnosticsProperty('prefcode', prefcode))
       ..add(DiagnosticsProperty('ja', ja))
       ..add(DiagnosticsProperty('en', en));
   }
@@ -338,7 +338,7 @@ class _$_PostalCodeData
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _PostalCodeData &&
-            const DeepCollectionEquality().equals(other.code, code) &&
+            const DeepCollectionEquality().equals(other.prefcode, prefcode) &&
             const DeepCollectionEquality().equals(other.ja, ja) &&
             const DeepCollectionEquality().equals(other.en, en));
   }
@@ -347,7 +347,7 @@ class _$_PostalCodeData
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(code),
+      const DeepCollectionEquality().hash(prefcode),
       const DeepCollectionEquality().hash(ja),
       const DeepCollectionEquality().hash(en));
 
@@ -364,7 +364,7 @@ class _$_PostalCodeData
 
 abstract class _PostalCodeData implements PostalCodeData {
   const factory _PostalCodeData(
-      {required final String code,
+      {required final String prefcode,
       required final PostalCodeAddress ja,
       required final PostalCodeAddress en}) = _$_PostalCodeData;
 
@@ -372,7 +372,7 @@ abstract class _PostalCodeData implements PostalCodeData {
       _$_PostalCodeData.fromJson;
 
   @override
-  String get code => throw _privateConstructorUsedError;
+  String get prefcode => throw _privateConstructorUsedError;
   @override
   PostalCodeAddress get ja => throw _privateConstructorUsedError;
   @override
